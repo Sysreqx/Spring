@@ -1,13 +1,16 @@
 package com.kaisar.springApp1;
 
-public class JazzMusic implements Music{
-    public void JazzMusicInit() {
-        System.out.println("Jazz Music Init");
-    }
+import org.springframework.stereotype.Component;
 
-    public void JazzMusicDestroy() {
-        System.out.println("Jazz Music Destroy");
-    }
+@Component
+public class JazzMusic implements Music{
+//    public void JazzMusicInit() {
+//        System.out.println("Jazz Music Init");
+//    }
+//
+//    public void JazzMusicDestroy() {
+//        System.out.println("Jazz Music Destroy");
+//    }
 
     @Override
     public String getSong() {
