@@ -11,4 +11,9 @@
           class="com.kaisar.springApp1.RockMusic">
     </bean>
 
+    <bean id="musicPlayer"
+          class="com.kaisar.springApp1.MusicPlayer">
+        <constructor-arg ref="musicBean"></constructor-arg>
+    </bean>
+
 </beans>
