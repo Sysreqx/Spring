@@ -10,17 +10,23 @@ import java.util.List;
 public class MusicPlayer {
 //    private List<Music> musicList = new ArrayList<>();
     private JazzMusic jazzMusic;
+    private CountryMusic countryMusic;
+
+    @Autowired
+    public MusicPlayer(JazzMusic jazzMusic, CountryMusic countryMusic) {
+        this.jazzMusic = jazzMusic;
+        this.countryMusic = countryMusic;
+    }
+
+    public void PlayMusic() {
+        System.out.println("Playing " + jazzMusic.getSong());
+        System.out.println("Playing " + countryMusic.getSong());
+    }
 
     // IoC
 //    public MusicPlayer(List<Music> musicList) {
 //        this.musicList.addAll(0, musicList);
 //    }
-
-    @Autowired
-    public MusicPlayer(JazzMusic jazzMusic) {
-        this.jazzMusic = jazzMusic;
-    }
-
 
 //    public void setMusic(List<Music> musicList) {
 //        this.musicList.addAll(0, musicList);
@@ -30,13 +36,12 @@ public class MusicPlayer {
 //        this.music = music;
 //    }
 
-    public void PlayMusic() {
-        System.out.println("Playing " + jazzMusic.getSong());
+//    public void PlayMusic() {
         // Для List
 //        System.out.println("Playing: ");
 //        for (int i = 0; i < musicList.size(); i++) {
 //            System.out.println(i + ". " + musicList.get(i).getSong());
 //        }
-    }
+//    }
 
 }
