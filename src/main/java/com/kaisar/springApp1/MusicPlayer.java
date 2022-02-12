@@ -18,9 +18,10 @@ public class MusicPlayer {
         this.countryMusic = countryMusic;
     }
 
-    public void PlayMusic() {
-        System.out.println("Playing " + jazzMusic.getSong());
-        System.out.println("Playing " + countryMusic.getSong());
+    public String PlayMusic() {
+        return "Playing " + jazzMusic.getSong();
+//        System.out.println("Playing " + jazzMusic.getSong());
+//        System.out.println("Playing " + countryMusic.getSong());
     }
 
     // IoC
