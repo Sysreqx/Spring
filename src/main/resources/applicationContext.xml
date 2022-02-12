@@ -7,17 +7,20 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:musicPlayer.properties" />
+
     <bean id="musicBean"
           class="com.kaisar.springApp1.RockMusic">
     </bean>
 
     <bean id="musicPlayer"
           class="com.kaisar.springApp1.MusicPlayer">
-        <!--В поле name указываем имя сеттера setMusic, автоматически удаляет set, переводит первую букву после set в нижний регистр-->
+        <!-- В поле name указываем имя сеттера setMusic, автоматически удаляет set, переводит первую букву после set в нижний регистр -->
         <property name="music" ref="musicBean" />
 
-        <property name="name" value="Some name" />
-        <property name="volume" value="50" />
+        <!-- Можно обращаться к значениям в файле .properties, через ${} -->
+        <property name="name" value="${musicPlayer.name}" />
+        <property name="volume" value="${musicPlayer.volume}" />
     </bean>
 
 </beans>
