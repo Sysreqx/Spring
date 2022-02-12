@@ -13,7 +13,8 @@
 
     <bean id="musicPlayer"
           class="com.kaisar.springApp1.MusicPlayer">
-        <constructor-arg ref="musicBean"></constructor-arg>
+        <!--В поле name указываем имя сеттера setMusic, автоматически удаляет set, переводит первую букву после set в нижний регистр-->
+        <property name="music" ref="musicBean"></property>
     </bean>
 
 </beans>
