@@ -52,7 +52,8 @@
     <bean id="musicBean"
           class="com.kaisar.springApp1.ClassicalMusic"
           init-method="classicalMusicInit"
-          destroy-method="classicalMusicDestroy">
+          destroy-method="classicalMusicDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 
     <bean id="jazzMusicBean"
