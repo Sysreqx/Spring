@@ -13,6 +13,9 @@ public class TestSpring {
 
         musicPlayer.PlayMusic();
 
+        System.out.println(musicPlayer.getName());
+        System.out.println(musicPlayer.getVolume());
+
         context.close();
     }
 }

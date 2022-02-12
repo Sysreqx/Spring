@@ -14,7 +14,10 @@
     <bean id="musicPlayer"
           class="com.kaisar.springApp1.MusicPlayer">
         <!--В поле name указываем имя сеттера setMusic, автоматически удаляет set, переводит первую букву после set в нижний регистр-->
-        <property name="music" ref="musicBean"></property>
+        <property name="music" ref="musicBean" />
+
+        <property name="name" value="Some name" />
+        <property name="volume" value="50" />
     </bean>
 
 </beans>
