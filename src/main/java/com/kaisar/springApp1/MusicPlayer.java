@@ -1,52 +1,37 @@
 package com.kaisar.springApp1;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MusicPlayer {
 //    private List<Music> musicList = new ArrayList<>();
-    private Music music;
-
-    private String name;
-    private int volume;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
+    private JazzMusic jazzMusic;
 
     // IoC
 //    public MusicPlayer(List<Music> musicList) {
 //        this.musicList.addAll(0, musicList);
 //    }
 
-    public MusicPlayer(Music music) {
-        this.music = music;
+    @Autowired
+    public MusicPlayer(JazzMusic jazzMusic) {
+        this.jazzMusic = jazzMusic;
     }
 
-    public MusicPlayer() {}
 
 //    public void setMusic(List<Music> musicList) {
 //        this.musicList.addAll(0, musicList);
 //    }
 
-    public void setMusic(Music music) {
-        this.music = music;
-    }
+//    public void setMusic(Music music) {
+//        this.music = music;
+//    }
 
     public void PlayMusic() {
-        System.out.println("Playing " + music.getSong());
+        System.out.println("Playing " + jazzMusic.getSong());
         // Для List
 //        System.out.println("Playing: ");
 //        for (int i = 0; i < musicList.size(); i++) {
