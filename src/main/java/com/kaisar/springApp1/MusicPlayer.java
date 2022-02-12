@@ -1,7 +1,10 @@
 package com.kaisar.springApp1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
-    private Music music;
+    private List<Music> musicList = new ArrayList<>();
 
     private String name;
     private int volume;
@@ -23,18 +26,21 @@ public class MusicPlayer {
     }
 
     // IoC
-    public MusicPlayer(Music music) {
-        this.music = music;
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList.addAll(0, musicList);
     }
 
     public MusicPlayer() {}
 
-    public void setMusic(Music music) {
-        this.music = music;
+    public void setMusic(List<Music> musicList) {
+        this.musicList.addAll(0, musicList);
     }
 
     public void PlayMusic() {
-        System.out.println("Playing " + music.getSong());
+        System.out.println("Playing: ");
+        for (int i = 0; i < musicList.size(); i++) {
+            System.out.println(i + ". " + musicList.get(i).getSong());
+        }
     }
 
 }

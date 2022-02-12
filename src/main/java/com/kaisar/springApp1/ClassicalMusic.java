@@ -4,6 +4,6 @@ public class ClassicalMusic implements Music{
 
     @Override
     public String getSong() {
-        return "Classical music getSong";
+        return "Classical music getSong()";
     }
 }
