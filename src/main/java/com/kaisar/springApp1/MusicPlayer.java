@@ -10,14 +10,18 @@ import java.util.List;
 @Component
 public class MusicPlayer {
 //    private List<Music> musicList = new ArrayList<>();
+    private Music music1;
+    private Music music2;
+
     @Autowired
-    @Qualifier("jazzMusic")
-    private Music music;
+    public MusicPlayer(@Qualifier("jazzMusic") Music music1,
+                       @Qualifier("countryMusic") Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
+    }
 
     public String PlayMusic() {
-        return "Playing " + music.getSong();
-//        System.out.println("Playing " + jazzMusic.getSong());
-//        System.out.println("Playing " + countryMusic.getSong());
+        return " Playing: \n" + music1.getSong() + ", \n" + music2.getSong();
     }
 
     // IoC
