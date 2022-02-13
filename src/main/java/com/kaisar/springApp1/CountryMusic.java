@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-@Component
 public class CountryMusic implements Music{
     @Override
     public String getSong() {

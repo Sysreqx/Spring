@@ -6,7 +6,6 @@ import javax.annotation.PreDestroy;
 
 import java.util.ArrayList;
 
-@Component
 public class RhythmAndBluesMusic implements Music{
 
     @PostConstruct

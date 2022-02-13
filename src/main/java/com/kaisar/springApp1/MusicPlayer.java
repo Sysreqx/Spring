@@ -9,45 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
 public class MusicPlayer {
-    /*
     private Music music1;
     private Music music2;
 
-    @Autowired
     public MusicPlayer(@Qualifier("jazzMusic") Music music1,
                        @Qualifier("countryMusic") Music music2) {
         this.music1 = music1;
         this.music2 = music2;
     }
 
-    public String PlayMusic(MusicGenre musicGenre) {
-        Random random = new Random();
-        int r = random.nextInt(3);
-
-        if (musicGenre == MusicGenre.JAZZ) {
-            return (music1.songsList().get(r));
-        }
-
-        if (musicGenre == MusicGenre.COUNTRY) {
-            return (music2.songsList().get(r));
-        }
-        return null;
-    }
-     */
-
-    @Value("${musicPlayer.name}")
-    private String name;
-
-    @Value("${musicPlayer.volume}")
-    private int volume;
-
-    public String getName() {
-        return name;
+    public String playMusic() {
+        return "Playing: \n" + music1.getSong() + ", \n" + music2.getSong();
     }
 
-    public int getVolume() {
-        return volume;
-    }
 }
