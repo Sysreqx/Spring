@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Component
 public class MusicPlayer {
@@ -20,29 +21,17 @@ public class MusicPlayer {
         this.music2 = music2;
     }
 
-    public String PlayMusic() {
-        return " Playing: \n" + music1.getSong() + ", \n" + music2.getSong();
+    public String PlayMusic(MusicGenre musicGenre) {
+        Random random = new Random();
+        int r = random.nextInt(3);
+
+        if (musicGenre == MusicGenre.JAZZ) {
+            return (music1.songsList().get(r));
+        }
+
+        if (musicGenre == MusicGenre.COUNTRY) {
+            return (music2.songsList().get(r));
+        }
+        return null;
     }
-
-    // IoC
-//    public MusicPlayer(List<Music> musicList) {
-//        this.musicList.addAll(0, musicList);
-//    }
-
-//    public void setMusic(List<Music> musicList) {
-//        this.musicList.addAll(0, musicList);
-//    }
-
-//    public void setMusic(Music music) {
-//        this.music = music;
-//    }
-
-//    public void PlayMusic() {
-        // Для List
-//        System.out.println("Playing: ");
-//        for (int i = 0; i < musicList.size(); i++) {
-//            System.out.println(i + ". " + musicList.get(i).getSong());
-//        }
-//    }
-
 }
