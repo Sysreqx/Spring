@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    <context:property-placeholder location="classpath:musicPlayer.properties" />-->
+        <context:property-placeholder location="classpath:musicPlayer.properties" />
         <context:component-scan base-package="com.kaisar.springApp1" />
     <!--    <bean id="rockMusicBean"
               class="com.kaisar.springApp1.RockMusic">

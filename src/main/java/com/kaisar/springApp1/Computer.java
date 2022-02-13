@@ -18,8 +18,8 @@ public class Computer {
     MusicGenre musicGenre1 = MusicGenre.JAZZ;
     MusicGenre musicGenre2 = MusicGenre.COUNTRY;
 
-    @Override
-    public String toString() {
-        return "com.kaisar.springApp1.Computer " + id + " Playing: \n" + musicPlayer.PlayMusic(musicGenre2);
-    }
+//    @Override
+//    public String toString() {
+//        return "com.kaisar.springApp1.Computer " + id + " Playing: \n" + musicPlayer.PlayMusic(musicGenre2);
+//    }
 }
