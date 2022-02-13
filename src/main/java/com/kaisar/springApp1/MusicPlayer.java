@@ -1,6 +1,7 @@
 package com.kaisar.springApp1;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -9,17 +10,12 @@ import java.util.List;
 @Component
 public class MusicPlayer {
 //    private List<Music> musicList = new ArrayList<>();
-    private JazzMusic jazzMusic;
-    private CountryMusic countryMusic;
-
     @Autowired
-    public MusicPlayer(JazzMusic jazzMusic, CountryMusic countryMusic) {
-        this.jazzMusic = jazzMusic;
-        this.countryMusic = countryMusic;
-    }
+    @Qualifier("jazzMusic")
+    private Music music;
 
     public String PlayMusic() {
-        return "Playing " + jazzMusic.getSong();
+        return "Playing " + music.getSong();
 //        System.out.println("Playing " + jazzMusic.getSong());
 //        System.out.println("Playing " + countryMusic.getSong());
     }
