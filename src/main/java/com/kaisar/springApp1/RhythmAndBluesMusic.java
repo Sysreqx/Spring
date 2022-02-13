@@ -8,16 +8,6 @@ import java.util.ArrayList;
 
 public class RhythmAndBluesMusic implements Music{
 
-    @PostConstruct
-    public void rhythmAndBluesMusicPostConstruct() {
-        System.out.println("Rhythm & blues (R&B) Initialization via @PostConstruct");
-    }
-
-    @PreDestroy
-    public void rhythmAndBluesMusicPreDestroy() {
-        System.out.println("Rhythm & blues (R&B) Initialization via @PreDestroy");
-    }
-
     @Override
     public String getSong() {
         return "Rhythm & blues (R&B) music getSong()";

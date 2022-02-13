@@ -10,17 +10,17 @@ import java.util.List;
 import java.util.Random;
 
 public class MusicPlayer {
-    private Music music1;
-    private Music music2;
+    ArrayList<Music> musicGenre = new ArrayList<>();
 
-    public MusicPlayer(@Qualifier("jazzMusic") Music music1,
-                       @Qualifier("countryMusic") Music music2) {
-        this.music1 = music1;
-        this.music2 = music2;
+    public MusicPlayer(ArrayList<Music> musicGenre) {
+        this.musicGenre = musicGenre;
     }
 
     public String playMusic() {
-        return "Playing: \n" + music1.getSong() + ", \n" + music2.getSong();
+        Random random = new Random();
+        int r = random.nextInt(4);
+
+        return musicGenre.get(r).getSong();
     }
 
 }
